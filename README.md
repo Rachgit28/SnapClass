@@ -10,9 +10,7 @@ Making attendance faster and smarter with computer vision and voice AI.
 
 [![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://snapclass-ai-att.streamlit.app/)
 [![Landing Page](https://img.shields.io/badge/Landing%20Page-Visit-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://snapclass-landing-page-murex.vercel.app/)
-[![Python](https://img.shields.io/badge/Python-100%25-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/Rachgit28/SnapClass)
 
-[🚀 Try the App](https://snapclass-ai-att.streamlit.app/) · [🌐 Landing Page](https://snapclass-landing-page-murex.vercel.app/) · [🐛 Report an Issue](https://github.com/Rachgit28/SnapClass/issues)
 
 </div>
 
@@ -34,7 +32,7 @@ Making attendance faster and smarter with computer vision and voice AI.
 | 📸 | **AI Face Analysis** | Recognizes every student's face from a single class photo for instant, accurate attendance. |
 | 🎙️ | **Sequential Voice ID** | Students say "Present" one-by-one; voice biometrics are matched against stored embeddings in real time. |
 | 📱 | **QR-Driven Roster** | Course-specific QR codes / join links enable instant student enrollment — no manual entry. |
-| 📊 | **Attendance Analytics** | Confidence scores, historical logs, CSV exports, and long-term attendance trends. |
+| 📊 | **Attendance Analytics** | Historical logs and long-term attendance trends. |
 | 👩‍🏫 | **Teacher Dashboard** | Manage subjects, rosters, and attendance sessions from one unified view. |
 | 🎓 | **Student Dashboard** | Track attendance percentage across subjects with real-time updates. |
 | 🔐 | **Secure Auth** | Encrypted, role-based login synced across devices via Supabase. |
@@ -70,77 +68,11 @@ Making attendance faster and smarter with computer vision and voice AI.
 
 ---
 
-## 📂 Project Structure
-
-```
-SnapClass/
-├── .streamlit/                # Streamlit configuration
-├── src/
-│   ├── screens/                # home_screen, teacher_screen, student_screen
-│   └── components/              # reusable UI components (e.g. auto_enroll_dialog)
-├── app.py                     # application entry point
-├── requirements.txt            # Python dependencies
-└── .gitignore
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Python 3.9+
-- A [Supabase](https://supabase.com/) project (for auth & data storage)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Rachgit28/SnapClass.git
-cd SnapClass
-
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Run locally
-
-```bash
-streamlit run app.py
-```
-
-The app will be available at `http://localhost:8501`.
-
-> ⚡ **Prefer not to install anything?** Just use the hosted version: [snapclass-ai-att.streamlit.app](https://snapclass-ai-att.streamlit.app/)
-
----
-
 ## 🌐 Links
 
 - 🚀 **Live App:** [snapclass-ai-att.streamlit.app](https://snapclass-ai-att.streamlit.app/)
 - 🖥️ **Landing Page:** [snapclass-landing-page-murex.vercel.app](https://snapclass-landing-page-murex.vercel.app/)
 - 💻 **Source Code:** [github.com/Rachgit28/SnapClass](https://github.com/Rachgit28/SnapClass)
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Rachgit28/SnapClass/issues).
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is currently unlicensed. Add a `LICENSE` file to specify usage terms.
 
 ---
 
