@@ -11,6 +11,7 @@ from src.components.dialog_attendance_results import attendance_result_dialog
 import numpy as np
 import pandas as pd
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from src.pipelines.face_pipeline import predict_attendance
 from src.database.config import supabase
 from src.components.dialog_voice_attendance import voice_attendance_dialog
@@ -152,7 +153,7 @@ def teacher_tab_take_attendance():
 
                     results, attendance_to_log  = [], []
 
-                    current_timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+                    current_timestamp = datetime.now(ZoneInfo("UTC")).isoformat()
 
 
                     for node in enrolled_students:
@@ -220,6 +221,16 @@ def teacher_tab_manage_subjects():
         st.warning("NO SUBJECTS FOUND. CREATE ONE ABOVE")
 
 
+def format_ist(timestamp):
+    if not timestamp:
+        return "N/A"
+
+    utc_dt = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+    ist_dt = utc_dt.astimezone(ZoneInfo("Asia/Kolkata"))
+
+    return ist_dt.strftime("%Y-%m-%d %I:%M %p")
+
+
 def teacher_tab_attendance_records():
     st.header('Attendance Records')
 
@@ -233,15 +244,16 @@ def teacher_tab_attendance_records():
     data = []
 
     for r in records:
-        ts = r.get('timestamp')
+        ts = r.get("timestamp")
 
         data.append({
             "ts_group": ts.split(".")[0] if ts else None,
-            "Time": datetime.fromisoformat(ts).strftime("%Y-%m-%d %I:%M %p") if ts else "N'A",
-            "Subject": r['subjects']['name'],
-            "Subject Code":r['subjects']['subject_code'],
-            "is_present": bool(r.get('is_present', False))
-        })
+            "Time": format_ist(ts),
+            "Subject": r["subjects"]["name"],
+            "Subject Code": r["subjects"]["subject_code"],
+            "is_present": bool(r.get("is_present", False
+            ))
+    })  
 
 
     df = pd.DataFrame(data)
