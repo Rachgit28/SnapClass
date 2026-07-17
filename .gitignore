@@ -9,3 +9,9 @@ venv/
 .streamlit/
 
 dist/
+
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
